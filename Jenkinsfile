@@ -29,10 +29,11 @@ pipeline {
     }
     stages {
         stage("Dynamic"){
-            steps{
-                when {
+             when {
                     branch 'feature-multi'
                }
+            steps{
+                 echo(message:"Ovo je samo za ovu granu")
             }
         }
         stage("Download"){
