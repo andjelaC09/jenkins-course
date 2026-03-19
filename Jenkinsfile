@@ -28,6 +28,13 @@ pipeline {
     )  
     }
     stages {
+        stage("Dynamic"){
+            steps{
+                when {
+                    branch 'feature-multi'
+               }
+            }
+        }
         stage("Download"){
             steps{ 
                 cleanWs()
